@@ -24,6 +24,24 @@ Boşluk Tuşu : Karakteri Durdur<br>
 
 ESC Tuşu : Oyunu Durdur<br>
 
+##
+![Main_Menu](https://github.com/Hkaya50126/Godot-3D-Game/assets/58502933/ce6e9900-9b6d-46dc-a84f-fd98c5bf3b7a)
+##
+![how_to_play](https://github.com/Hkaya50126/Godot-3D-Game/assets/58502933/a04fba71-47c2-4b96-9e7b-86c9cc01651a)
+##
+![game_scene](https://github.com/Hkaya50126/Godot-3D-Game/assets/58502933/430891df-4eee-4a47-9539-6a9bd43ab58c)
+##
+![game_scene2](https://github.com/Hkaya50126/Godot-3D-Game/assets/58502933/1eaffd09-482e-44ed-89f3-6d36cc5adb3c)
+##
+![game_scene3](https://github.com/Hkaya50126/Godot-3D-Game/assets/58502933/ffb93cc6-6c27-4636-bac8-76dac7ae3d7e)
+##
+![game_scene4](https://github.com/Hkaya50126/Godot-3D-Game/assets/58502933/a1f1dac6-2ebd-4ff5-9a7c-d84ec4a26daf)
+
+
+
+
+
+
 
 
  
