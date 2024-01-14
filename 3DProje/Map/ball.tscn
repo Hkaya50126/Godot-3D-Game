@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtang0jluhh6d"]
+
+[ext_resource type="Script" path="res://Scripts/ball_script.gd" id="1_hl0pb"]
+[ext_resource type="PackedScene" uid="uid://cx4uo6nfykia7" path="res://Objects/Ball/ball.glb" id="2_0dxf5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3rykm"]
+albedo_color = Color(0.782577, 0.560214, 0.498215, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_adbkt"]
+size = Vector3(0.865479, 0.867615, 0.796753)
+
+[node name="Ball" type="CharacterBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_hl0pb")
+
+[node name="ball" parent="." instance=ExtResource("2_0dxf5")]
+transform = Transform3D(1, 0, 0, 0, 1, 2.84217e-14, 0, -2.84217e-14, 1, 0, 5.57226, -4.76837e-07)
+material_override = SubResource("StandardMaterial3D_3rykm")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(11, 0, 0, 0, 11, 0, 0, 0, 12, 0.029171, 5.54173, 0.00799894)
+shape = SubResource("BoxShape3D_adbkt")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+avoidance_enabled = true
+max_neighbors = 50
+max_speed = 50.0
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.001
+one_shot = true
+autostart = true
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(11, 0, 0, 0, 11, 0, 0, 0, 12, 0.029171, 5.54173, 0.00799894)
+shape = SubResource("BoxShape3D_adbkt")
+
+[connection signal="navigation_finished" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_navigation_finished"]
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

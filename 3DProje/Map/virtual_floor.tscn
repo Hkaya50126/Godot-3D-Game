@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://c6fhmxwg83f5g"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hv605"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5eb6t"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d3g5g"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_avfxc"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mwuiy"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_d6bwm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_31gg0"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hepmj"]
+
+[node name="virtual_floor" type="Node3D"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, -6.77626e-21, 0, 0, -1.22392e-06, -134, 0, 28, -5.85733e-06, 0, 1.7474, 7.63812e-08)
+shape = SubResource("ConvexPolygonShape3D_hv605")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, -6.77626e-21, -1.36424e-12, -3.55271e-15, -2.09815e-06, -110, -1.33456e-22, 48, -4.80825e-06, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_5eb6t")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 6.82121e-13, 0, 0, 68, 0, 0, 0, 160, 0, 0, 0)
+shape = SubResource("BoxShape3D_d3g5g")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, -4.54747e-13, 0, 0, 80, 0, 0, 0, 70, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_avfxc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1.22392e-06, -134, 0, 28, -5.85733e-06, 0, 0, 0)
+visible = false
+mesh = SubResource("BoxMesh_mwuiy")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -2.09815e-06, -110, 0, 48, -4.80825e-06, 0, 0, 0)
+visible = false
+mesh = SubResource("BoxMesh_d6bwm")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 68, 0, 0, 0, 160, 0, 0, 0)
+visible = false
+mesh = SubResource("BoxMesh_31gg0")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 80, 0, 0, 0, 70, 0, 0, 0)
+visible = false
+mesh = SubResource("BoxMesh_hepmj")

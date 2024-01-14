@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkhyr38n441l4"]
+
+[ext_resource type="Script" path="res://Scripts/player_script.gd" id="1_wtsij"]
+[ext_resource type="PackedScene" uid="uid://d0wadqeasa1u5" path="res://Objects/Assets/gltf/staff.gltf" id="2_es40h"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7xeuh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_efps1"]
+size = Vector3(1, 0.909912, 1.42755)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2obvn"]
+size = Vector3(1, 0.770264, 2.13232)
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_wtsij")
+
+[node name="MovementGuide" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_7xeuh")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.38321, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.132155, 0.791302)
+
+[node name="staff" parent="Head/Camera3D" instance=ExtResource("2_es40h")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.10543e-15, -0.885593, -1.06378)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.02488, 0, 0, 0, 4.41126, 0, 0, 0, 2.88288, 0, -0.00592333, -1.06217)
+shape = SubResource("BoxShape3D_efps1")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.319458, -2.05286)
+shape = SubResource("BoxShape3D_2obvn")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

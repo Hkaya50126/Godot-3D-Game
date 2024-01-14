@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsb5jsqrkhlmy"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4vqis"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sptsb"]
+
+[node name="virtual_wall" type="StaticBody3D"]
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_4vqis")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 65, 0, 0, 0, 190, 0, 0, 0)
+shape = SubResource("BoxShape3D_sptsb")
