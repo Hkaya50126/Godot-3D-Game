@@ -89,8 +89,10 @@ func get_input(delta):
 		switch_camera()
 	if Input.is_action_pressed("down_key"):
 		rot_x+=-turn_speed*delta
-	if Input.is_action_pressed("stop_key"):
+	if Input.is_action_pressed("stop_key") and is_deleted==false and is_fired==false:
 		speed=0		
+		print(is_deleted)
+		print(is_fired)
 	if Input.is_action_pressed("stop_key")==false and is_deleted==false and is_fired==false:
 		speed=15	
 	if Input.is_action_pressed("right_key"):
@@ -129,13 +131,12 @@ func _on_area_3d_body_entered(body):
 	elif body.is_in_group("ghostgroup") and is_fired==false:
 		get_tree().change_scene_to_file("res://Scenes/finish_scene.tscn")
 	
-	else:
-		speed=0
+	
 		
 		
 func _on_area_3d_body_exited(body):
 	if is_deleted==false:
-		speed=0
+		speed=15
 	
 
 
