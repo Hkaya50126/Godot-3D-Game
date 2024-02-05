@@ -3,8 +3,9 @@
 Geliştirmiş olduğum bu oyunun amacı ruh emici hayaletlere dokunmadan rastgele hareket eden topu yakalayıp belirlenen hedefleri vurmaktır. Karakterimiz bir büyücüdür ve sopasıyla uçabilmektedir. <br>
 ##
 Oyun içerisinde first person ve third person kamera kontrolleri, fare hareketleri ile etrafa bakma, w-a-s-d tuşları ile yönlendirme ve yönlendirme esnasında kamera açısının değişimi, belirtilen alanda rastgele polinomsal nokta oluşturma, oluşturulan noktaya objelerin hareket etmesi, topun fiziksel özelliklere göre fırlatılması, hayaletlere, hedefe ve oyun ekranına ses ekleme, sahneler arası geçişler, oyunu durdurma gibi birçok özelliğe sahiptir.
-##
-#Nasıl Oynanır?
+
+
+<h2>Nasıl Oynanır?</h2>
 
 W tuşu : Aşağı git<br>
 
@@ -23,6 +24,32 @@ Fare Sol Tuş : Topu Fırlatır
 Boşluk Tuşu : Karakteri Durdur<br>
 
 ESC Tuşu : Oyunu Durdur<br>
+
+##
+
+The aim of this game I developed is to catch the randomly moving ball without touching the soul-sucking ghosts and hit the specified targets. Our character is a wizard who can fly with his wand.
+
+The game features first-person and third-person camera controls, looking around with mouse movements, directional movement with the w-a-s-d keys, changing camera angle during movement, generating random polynomial points in the specified area, moving objects to the created points, launching the ball according to physical properties, adding sound effects to ghosts, targets, and the game screen, scene transitions, pausing the game, and many other features.
+
+<h2>How to Play?</h2>
+
+W key: Move Down
+
+S key: Move Up
+
+A key: Turn Left
+
+D key: Turn Right
+
+V key: Change Camera Angle (FPS/TPS)
+
+Mouse Movement: Look in the Specified Direction
+
+Left Mouse Button: Throw the Ball
+
+Space Bar: Pause the Character
+
+ESC key: Pause the Game
 
 ##
 ![Main_Menu](https://github.com/Hkaya50126/Godot-3D-Game/assets/58502933/ce6e9900-9b6d-46dc-a84f-fd98c5bf3b7a)
